@@ -1,7 +1,7 @@
 <?php 
 	//define connections variables
-	define ("DB_SERVER", "mysql002.hosting.combell.com");
-	define ("DB_USER", "ID133073_login");
-	define ("DB_PASS", "Xyznmixyz1@");
-	define ("DB_NAME", "ID133073_login");
+	define ("DB_SERVER", "a.db.shared.orchestra.io");
+	define ("DB_USER", "user_2f838938");
+	define ("DB_PASS", "8KPU$^lv_Dt%Dd");
+	define ("DB_NAME", "db_2f838938");
 ?>
