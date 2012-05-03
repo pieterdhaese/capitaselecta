@@ -12,7 +12,7 @@ session_start();
 <h1>wachtwoord:</h1><input name="wachtwoord" type="password" size="15" />
                 </pre>
 					<input type="submit" name="submit" value="Inloggen" />
-					<a href="register.php">registreer</a>
+					<a href="register.php">register</a>
                     
     </form>
 </body>
