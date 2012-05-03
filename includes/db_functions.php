@@ -27,7 +27,7 @@ require_once("connectvars.php");
 	
 	function put_user_in_database($user,$conn)
 	{
-		$query=	"INSERT INTO users(username,voornaam,achternaam,password,email) VALUES('".$user['login']."','".$user['voornaam']."','".$user['achternaam']."','".$user['password']."','".$user['email']."');";
+		$query=	"INSERT INTO user(username,first_name,last_name,password,email) VALUES('".$user['login']."','".$user['voornaam']."','".$user['achternaam']."','".$user['password']."','".$user['email']."');";
 		mysqli_query($conn,$query);
 	}
 	

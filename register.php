@@ -1,5 +1,5 @@
 <?php
-// $title="datalife - registreer";
+// $title="registreer";
 // require_once "includes/header.php";
 require_once "includes/db_functions.php";
 $conn=get_db_connection();
@@ -41,8 +41,8 @@ if(isset($_POST["voornaam"]))
 
 
 
-print_r($user);
-// put_user_in_database($user,$conn);
+// print_r($user);
+put_user_in_database($user,$conn);
 
 //$result=mysql_query($sql);
 echo "Registratie Succesvol!";
