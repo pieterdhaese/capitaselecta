@@ -52,7 +52,7 @@ echo "Registratie Succesvol!";
 
 
 <h2>Gebruiker toevoegen</h2>
-<form action="datalife_register.php" method="post">
+<form action="register.php" method="post">
 <label><h1>voornaam:</h1></label>
 <input type="text" name="voornaam"/><br />
 <label><h1>achternaam:</h1></label>
