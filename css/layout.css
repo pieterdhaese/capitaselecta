@@ -1,0 +1,44 @@
+
+#wrapper{
+	background-color:LightGrey;
+	width:885px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	padding-left:40px;
+	
+	
+}
+
+#menu{
+	font-size:18px;
+	
+}
+#menu ul{
+	list-style-type:none;
+	width:885px;
+	height:25px;
+	padding:10px 0px 10px 0px;
+}
+
+#menu li{
+	position:relative;
+	left:103px;
+	display:inline;
+	border:1px black;
+	color:#FFFFFF;
+	width:100px;
+	padding:0px 34px 0px 33px;
+	margin:10px 0px 10px 0px;
+	text-align:center;	
+}
+
+#footer{
+	text-align:center;
+}
+
+form {
+position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}

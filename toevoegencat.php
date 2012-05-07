@@ -1,27 +1,34 @@
 <?php
-// $title="Categorie toevoegen";
-// require_once "includes/header.php";
+$title="Categorie toevoegen";
+require_once "includes/header.php";
 require_once "includes/db_functions.php" ;
+session_start();
 $conn=get_db_connection();
 $data=array();
-// echo count($users);
-// print_r($_POST);
 
+// print_r($_POST);
+if (isset($_POST["submit"]))
+{
+	if(isset($_POST['catnaam'])&& $_POST['catnaam'] != '')
+	{
+		$data=$_POST['catnaam'];
+		// echo $data;
+		put_cat_in_database($cat,$conn);
+		echo $_POST['catnaam'] . "is toegevoegd";
+	}else
+	{
+		echo "vul een naam in";
+	}
+}
 ?>
-<html>
-<head></head>
-<body>
+
 <div id="content">
-<form id="toevoegen">
-naam : <input name="productnaam" type="text"/></br>
+<form id="toevoegen" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+naam : <input name="catnaam" type="text"/></br>
 <input type="submit" name="submit" value="toevoegen"/>
 </form>
 </div>
 
-
-<div id="footer_text_register">
-<h11>by Pieter D'haese &copy; 2012 All Rights Reserved<h11>        
-        </div>
-
-</body>
-</html>
+<?php
+require_once "includes/footer.php";
+?>

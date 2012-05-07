@@ -1,25 +1,26 @@
-<link href="CSS/layout.css" rel="stylesheet" type="text/css">
-
 <html>
 <head>
 <title><?php echo $title ?></title>
-<link rel="shortcut icon" href="images/favicon.gif" />
+<style type="text/css">
+			@import url(css/layout.css);
+</style>
 </head>
 <body>
 
 
 
-
+<div id="wrapper">
 <div id="header">
- 
+ <div id="logo">
+ <img src="images/logo.png" width="147px" height="97px"/>
+ </div>
     
     <!-- ="active"-->
     <div id="menu">
       <ul>
-        <li><a class="active" href="index.php"><span>Home</span></a></li>
-        <li><a href="#"><span>Profiel</span></a></li>
-        <li><a href="support.php"><span>Support</span></a></li>
+        <li><a class="active" href="home.php">Home</a></li>
+        <li><a href="logout.php">logout</a></li>
       </ul>
     </div>
 </div>
-        <div id="body_blue">
+        

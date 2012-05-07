@@ -2,6 +2,7 @@
 // $title="Afhandelen";
 // require_once "includes/header.php";
 require_once "includes/db_functions.php" ;
+session_start();
 $conn=get_db_connection();
 $data=array();
 // echo count($users);
@@ -20,13 +21,6 @@ if(isset($_POST["submit"]))
 </div>
 
 
-<div id="footer_text_register">
-<h11>by Pieter D'haese &copy; 2012 All Rights Reserved<h11>        
-        </div>
-</div>
-
-</div>
-
-
-</body>
-</html>
+<?php
+require_once "includes/footer.php";
+?>

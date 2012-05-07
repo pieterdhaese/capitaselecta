@@ -1,5 +1,5 @@
 <?php
-$title="Bestellen";
+$title="overzicht voltooide bestellingen";
 require_once "includes/header.php";
 session_start();
 require_once "includes/db_functions.php" ;
@@ -12,10 +12,11 @@ $data=array();
 	<table border="1px">
 	<th>tafel</th><th>product</th><th>totprijs</th><th>aantal</th>
 <?php
- table_niet_betaald($conn);
+ table_voltooid($conn);
 ?>
 </table>
 </div>
+
 
 <?php
 require_once "includes/footer.php";
