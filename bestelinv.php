@@ -20,7 +20,8 @@ if(isset($_POST["submit"]))
 			{
 				$bestelling["aantal"]==$_POST["aantal"];
 				// echo 'ok';
-				put_bestelling_in_database($bestelling,$conn);
+				print_r($_POST);
+				// put_bestelling_in_database($bestelling,$conn);
 			}else
 			{
 				echo 'vul een aantal in';
