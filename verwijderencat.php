@@ -11,7 +11,7 @@ if(isset($_POST["submit"]))
 {
 	if (isset($_POST["categorie"]) && $_POST["categorie"]!= '')
 	{
-		delete_cat_in_database($_POST["categorie"],$conn)
+		delete_cat_in_database($_POST["categorie"],$conn);
 	}else
 	{
 		echo "kies een categorie";
