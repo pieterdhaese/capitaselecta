@@ -21,6 +21,7 @@ if(isset($_POST["voornaam"]) && $_POST["voornaam"] !='')
 			if(isset($_POST["email"]) && $_POST["email"] !='')
 			{
 				$user['email']=$_POST["email"];
+				$user['login']=$_POST["voornaam"].".".$_POST["achternaam"];
 				echo "ok";
 			}else
 			{

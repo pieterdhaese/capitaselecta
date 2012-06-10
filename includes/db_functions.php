@@ -52,8 +52,9 @@ require_once("connectvars.php");
 	
 	function put_cat_in_database($cat,$conn)
 	{
-		$query=	"INSERT INTO categorie(naam) VALUES($cat);";
+		$query=	"INSERT INTO categorie(naam) VALUES('$cat');";
 		mysqli_query($conn,$query);
+		// echo $query;
 	}
 	
 	// $cat -> ID 
@@ -110,8 +111,9 @@ require_once("connectvars.php");
 	
 	function put_bestelling_in_database($bestelling,$conn)
 	{
-	$query=	"INSERT INTO bestelling(tafel,product,aantal,user) VALUES('".$bestelling['tafel']."','".$bestelling['product']."','".$bestelling['aantal']."',,'".$bestelling['user']."');";
+	$query=	"INSERT INTO bestelling(tafel,product,aantal,user) VALUES('".$bestelling['tafel']."','".$bestelling['product']."','".$bestelling['aantal']."','".$bestelling['user']."');";
 		mysqli_query($conn,$query);
+		// echo $query;
 	}
 	
 	function get_all_bestelling($conn)
@@ -138,7 +140,7 @@ require_once("connectvars.php");
 	// functies voor af te handelen
 	function get_bestelling_nafg($conn) // vraag tafels op die niet afgehandeld zijn
 	{
-		$query = "SELECT tafel,product,aantal FROM bestelling  WHERE afgehandeld=0 ";
+		$query = "SELECT tafel,product,aantal FROM bestelling WHERE afgehandeld=0 ";
 		return mysqli_query($conn,$query);
 	}
 	
@@ -182,11 +184,17 @@ require_once("connectvars.php");
 	
 	function handel_bestelling_tafel($conn,$tafel)
 	{
-		$query ="UPDATE bestelling SET afgehandeld=1 WHERE tafel=$tafel;" ;
-		return mysqli_query($conn,$query);
+		$query ="UPDATE bestelling SET afgehandeld='1' WHERE tafel=$tafel;" ;
+		mysqli_query($conn,$query);
 	}
 	
 	// functies voor te betalen
+	
+		function get_bestelling_nbet($conn) // vraag tafels op die niet afgehandeld zijn
+	{
+		$query = "SELECT tafel,product,aantal FROM bestelling WHERE betaald=0 ";
+		return mysqli_query($conn,$query);
+	}
 	
 	function table_niet_betaald($conn)
 	{
@@ -207,7 +215,7 @@ require_once("connectvars.php");
 	{
 		$data=array();
 		$totprijs=0;
-		$data1=get_values(get_bestelling_nafg($conn)); // niet afgehandelde bestelling
+		$data1=get_values(get_bestelling_nbet($conn)); // niet afgehandelde bestelling
 		$data2=get_values(get_all_product($conn));  // alle producten
 		
 		for($i=0;$i<count($data1);$i++)
@@ -230,8 +238,16 @@ require_once("connectvars.php");
 	
 	function betaal_bestelling_tafel($conn,$tafel)
 	{
-		$query ="UPDATE bestelling SET betaald=1 WHERE tafel=$tafel;" ;
-		return mysqli_query($conn,$query);
+		$query ="UPDATE bestelling SET betaald='1' WHERE tafel=$tafel;" ;
+		mysqli_query($conn,$query);
+	}
+	
+		function fill_option_tafel_best_bet($conn,$tafel) // combobox vullen met nog niet afgehandelde bestellingen
+	{
+		$result=get_values(get_bestelling_nbet($conn));
+		for ($i=0;$i<count($result);$i++){
+		echo '<option value="' . $result[$i]["tafel"] . '">' . $result[$i]["tafel"] .'</option>';
+		}
 	}
 	
 	// tabel voor alle betaalde bestellingen

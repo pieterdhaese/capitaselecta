@@ -4,17 +4,17 @@ require_once "includes/header.php";
 require_once "includes/db_functions.php" ;
 session_start();
 $conn=get_db_connection();
-$data=array();
+$cat=array();
 
 // print_r($_POST);
 if (isset($_POST["submit"]))
 {
 	if(isset($_POST['catnaam'])&& $_POST['catnaam'] != '')
 	{
-		$data=$_POST['catnaam'];
+		$cat=$_POST['catnaam'];
 		// echo $data;
 		put_cat_in_database($cat,$conn);
-		echo $_POST['catnaam'] . "is toegevoegd";
+		echo $_POST['catnaam'] . " is toegevoegd";
 	}else
 	{
 		echo "vul een naam in";

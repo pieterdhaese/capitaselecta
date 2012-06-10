@@ -35,7 +35,7 @@ if(isset($_POST["submit"]))
 
 tafel :<select name="tafel"> <?php 
 	echo '<option value="' . "" . '">' . " " . '</option>';
-	fill_option_tafel_best($conn);
+	fill_option_tafel_best_bet($conn,$tafel);
 	?></select></br>  
 
 <input type="submit" name="submit" value="toevoegen"/>

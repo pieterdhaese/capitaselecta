@@ -12,16 +12,18 @@ if(isset($_POST["submit"]))
 {
 	if(isset($_POST["tafel"])&&$_POST["tafel"]!='')
 	{
-		$bestelling["tafel"]==$_POST["tafel"];
+		$bestelling["tafel"]=$_POST["tafel"];
 		if(isset($_POST["product"])&&$_POST["product"]!='')
 		{
-			$bestelling["product"]==$_POST["product"];
+			$bestelling["product"]=$_POST["product"];
 			if(isset($_POST["aantal"])&&$_POST["aantal"]!='')
 			{
-				$bestelling["aantal"]==$_POST["aantal"];
+				$bestelling["aantal"]=$_POST["aantal"];
+				$bestelling["user"]=$_SESSION["username"];
 				// echo 'ok';
-				// print_r($_POST);
+				// print_r($_SESSION);
 				put_bestelling_in_database($bestelling,$conn);
+				echo "Uw bestelling is succesvol ingevoerd";
 			}else
 			{
 				echo 'vul een aantal in';
